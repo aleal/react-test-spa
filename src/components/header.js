@@ -1,15 +1,18 @@
 import _ from 'lodash';
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
 
 class Header extends React.Component {
     renderNavButtons() {
-        const userName = _.get(this,'props.user.user.name');
+        const userName = _.get(this,'props.user.name');
+
         if(userName) {
             return (
                 <span className="pull-xs-right"> 
-                    <span>Hello, {this.props.user.name} </span>
-                    <Link className="btn" to="/sign-out" > Sign out </Link></span>
+                    <span>Hello, {userName} </span>
+                    <Link className="btn" to="/sign-out" > Sign out </Link>
+                </span>
             ); 
         } else {
             return (
@@ -36,4 +39,8 @@ class Header extends React.Component {
     }
 }
 
-export default Header;
+function mapStateToProps({userData:{user}}) {
+    return {user};
+}
+
+export default connect(mapStateToProps)(Header);

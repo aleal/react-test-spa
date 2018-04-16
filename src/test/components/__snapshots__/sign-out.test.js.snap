@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sign Out Tests renders sign out page 1`] = `
+<div
+  className="container"
+>
+  <h2>
+     Sign out 
+  </h2>
+  <p>
+     You has been signed out. See you soon!!! 
+  </p>
+</div>
+`;
