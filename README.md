@@ -1,4 +1,6 @@
-#Setup
+# README
+
+## Setup
 
 ```
 #Install dependencies
