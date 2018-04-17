@@ -48,7 +48,19 @@ export const FIELD_CONFIGS = {
             }
             return null;
         }
+    },
+    picture: {
+        name: 'picture',
+        type: 'file',
+        label: 'Picture',
+        validate: (value) => {
+            if(_.get(value,'0.type','').indexOf("image") < 0) {
+                 return 'Choose an image file. (*.png, *.jpeg, *.jpg)';
+            }
+            return null;
+        }
     }
+
 };
 export function imageFileToBase64(file, callback) {
     var reader  = new FileReader();
@@ -103,7 +115,7 @@ export function validateForm(fields, values) {
     return errors;
 }
 
-export function renderForm(formObj, fields, events, cancelRedirectTo = '/') {
+export function renderForm(formObj, fields, events={}, cancelRedirectTo = '/') {
     const {handleSubmit} = formObj.props;
     return (
         <div className="form" >

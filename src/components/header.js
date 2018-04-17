@@ -11,7 +11,7 @@ class Header extends React.Component {
             return (
                 <span className="pull-xs-right"> 
                     <span>Hello, {userName} </span>
-                    <Link className="btn" to="/sign-out" > Sign out </Link>
+                    <Link className="btn" id='sign-out' to="/sign-out" > Sign out </Link>
                 </span>
             ); 
         } else {
@@ -26,7 +26,7 @@ class Header extends React.Component {
     }
     render(){
         return (
-            <div className="container">
+            <div className="container header">
                 <div className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"> 
                 <Link to="/" className="pull-xs-left ">
                 <img className="logo" alt='Logo' src="/logo.png"/>

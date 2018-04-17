@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import { stopSubmit } from 'redux-form';
 
 export function getApiUrl() {
@@ -5,12 +6,12 @@ export function getApiUrl() {
     case 'local':
         return 'http://localhost:3000';
     default:
-        return "https://serene-inlet-95437.herokuapp.com";
+        return 'https://serene-inlet-95437.herokuapp.com';
     } 
 }
 
 function getAuthorizationHeaders() {
-    const token = ""; // TODO GET TOKEN 
+    const token = localStorage.getItem('token');//_.get(store.getState(),'userData.token',''); 
     return {
       'Content-Type': 'application/json',
       'Authorization': token
@@ -32,23 +33,22 @@ function checkResponseStatus(response) {
   export function performFetch(path, method, params, formName, dispatch, callbackSuccess, callbackFailure) {
     const headers = getAuthorizationHeaders();
     const url = `${getApiUrl()}/${path}`;
-    return fetch(url,{
-        method,
-        headers,
-        body: JSON.stringify(params)
-    }).then(checkResponseStatus)
+    const requestConfig = {method, headers}
+    if (['get','head'].indexOf(method) < 0) {
+        requestConfig.body = JSON.stringify(params);
+    }
+    fetch(url, requestConfig).then(checkResponseStatus)
     .then(getResponseJson)
     .then((responseJson)=>dispatch(callbackSuccess(responseJson)))
     .catch((response) => {
         if(response.json) {
             getResponseJson(response)
             .then((responseJson)=>{
-                console.log(responseJson);
                 if(responseJson.errors) {
                     dispatch(stopSubmit(formName, responseJson.errors));
-                    dispatch(callbackFailure(''));
+                    dispatch(callbackFailure('Error'));
                 } else {
-                    dispatch(callbackFailure(responseJson.error || "Unknown Error"));
+                    dispatch(callbackFailure(responseJson.error));
                 }
             })
             .catch((response)=>dispatch(callbackFailure(response.statusText)));

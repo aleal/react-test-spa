@@ -21,12 +21,13 @@ class SignIn extends React.Component {
 
     render() {
         if(this.props.status === ACTION_STATUSES.SUCCESS) {
-            return <Redirect to='/home' />;
+            const to = _.get(this,'props.location.state.from.pathname','/home');
+            return <Redirect to={to} />;
         }
         return (
             <div className="container">
                 <h3>Sign In</h3>
-                {renderForm(this, FIELDS, {})}
+                {renderForm(this, FIELDS)}
             </div>
         );
     }

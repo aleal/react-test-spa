@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Add Dog Tests renders add dog page 1`] = `
+<div
+  className="container"
+>
+  <h3>
+    Add Dog
+  </h3>
+  <div
+    className="form"
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <div
+        className=""
+      >
+        <div
+          className="text-help"
+        >
+          
+        </div>
+      </div>
+      <div
+        className="form-group "
+      >
+        <label>
+          Name
+        </label>
+        <input
+          className="form-control"
+          name="name"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onDragStart={[Function]}
+          onDrop={[Function]}
+          onFocus={[Function]}
+          type="text"
+          value=""
+        />
+        <div
+          className="text-help"
+        >
+          
+        </div>
+      </div>
+      <div
+        className="form-group "
+      >
+        <label>
+          Picture
+        </label>
+        <input
+          className="form-control"
+          name="picture"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onDragStart={[Function]}
+          onDrop={[Function]}
+          onFocus={[Function]}
+          type="file"
+        />
+        <div
+          className="text-help"
+        >
+          
+        </div>
+      </div>
+      <button
+        className="btn btn-primary"
+        type="submit"
+      >
+        Submit
+      </button>
+      <a
+        className="btn btn-danger"
+        href="/home"
+        onClick={[Function]}
+      >
+        Cancel
+      </a>
+    </form>
+  </div>
+</div>
+`;

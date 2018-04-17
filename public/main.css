@@ -6,3 +6,27 @@
     width: 70px;
     height: 70px;
 }
+
+.avatar-link {
+    top: -100px;
+    left: 5px;
+    position: relative;
+}
+
+.dog-frame {
+    width: auto;
+    float: left;
+    margin: 5px;
+    border: 2px groove grey; 
+    height: -webkit-fill-available;
+    max-height: 250px;
+    max-width: 200px;
+    overflow: hidden;
+}
+
+.wishlist-btn {
+    top: -25px;
+    left: 5px;
+    position: relative;
+    float: left;
+}

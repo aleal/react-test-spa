@@ -2,7 +2,7 @@
 
 exports[`App Index Tests renders header when user is not signed in 1`] = `
 <div
-  className="container"
+  className="container header"
 >
   <div
     className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"
@@ -43,7 +43,7 @@ exports[`App Index Tests renders header when user is not signed in 1`] = `
 
 exports[`App Index Tests renders header when user is signed in 1`] = `
 <div
-  className="container"
+  className="container header"
 >
   <div
     className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"
@@ -70,6 +70,7 @@ exports[`App Index Tests renders header when user is signed in 1`] = `
       <a
         className="btn"
         href="/sign-out"
+        id="sign-out"
         onClick={[Function]}
       >
          Sign out 

@@ -49,7 +49,7 @@ class SignUp extends React.Component {
         return (
             <div className="container">
                 <h3>Sign Up</h3>
-                {renderForm(this, FIELDS, events,'/')}
+                {renderForm(this, FIELDS, events, '/')}
             </div>
         );
     }
