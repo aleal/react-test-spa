@@ -5,7 +5,7 @@ export function getApiUrl() {
     case 'local':
         return 'http://localhost:3000';
     default:
-        return 'http://localhost:3000';//'https://serene-inlet-95437.herokuapp.com';
+        return 'https://serene-inlet-95437.herokuapp.com';
     } 
 }
 
