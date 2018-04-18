@@ -75,7 +75,7 @@ exports[`Sign In Tests renders sign in page 1`] = `
         Submit
       </button>
       <a
-        className="btn btn-danger"
+        className="btn btn-danger btn-separator"
         href="/"
         onClick={[Function]}
       >

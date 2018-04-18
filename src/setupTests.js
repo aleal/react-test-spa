@@ -1,6 +1,13 @@
+let storage = {}
 const localStorageMock = {
-    getItem: jest.fn(),
-    setItem: jest.fn(),
-    clear: jest.fn()
-  };
-  global.localStorage = localStorageMock
+    getItem: (key) => {
+      return storage[key];
+    },
+    setItem: (key,value) => {
+      storage[key] = value;
+    },
+    clear: () => {
+        storage = {};
+    }
+};
+global.localStorage = localStorageMock

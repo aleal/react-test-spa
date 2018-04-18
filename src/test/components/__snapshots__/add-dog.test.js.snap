@@ -5,7 +5,18 @@ exports[`Add Dog Tests renders add dog page 1`] = `
   className="container"
 >
   <h3>
-    Add Dog
+     Add Dog
+    <span
+      className="pull-xs-right"
+    >
+      <a
+        className="btn btn-primary"
+        href="/home"
+        onClick={[Function]}
+      >
+         Back 
+      </a>
+    </span>
   </h3>
   <div
     className="form"
@@ -74,7 +85,7 @@ exports[`Add Dog Tests renders add dog page 1`] = `
         Submit
       </button>
       <a
-        className="btn btn-danger"
+        className="btn btn-danger btn-separator"
         href="/home"
         onClick={[Function]}
       >
