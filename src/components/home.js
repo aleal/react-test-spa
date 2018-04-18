@@ -52,6 +52,7 @@ class Home extends React.Component {
                 <h2> Dog List  <span className="pull-xs-right">
                   <Link className="btn btn-primary" to="/add-dog" > New Dog </Link>
                 </span></h2>
+                <hr/>
                 <div className='list-group'>
                     {this.renderDogs()}
                 </div>
