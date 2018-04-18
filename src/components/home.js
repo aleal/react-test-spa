@@ -24,20 +24,23 @@ class Home extends React.Component {
             const dogCreator = users[dog.user_id] || {};
             return (
                 <div className='dog-frame' key={dog.id}> 
-                     <img src={dog.picture} className='dog-picture' />
+                    <div className='dog-picture' >
+                        <img src={dog.picture} />
+                    </div>
                      <p className='dog-name'>{dog.name}</p>
-                     
-                     <Link to={`/user-profile/${dog.user_id}`} className="avatar-link"  >
+                     <div className="avatar-link"> 
+                    <Link to={`/user-profile/${dog.user_id}`}  >
                         <UserAvatar 
-                            size="55" 
-                            name={dogCreator.name || 'Unknown'} 
-                            src={dogCreator.avatar||''} 
+                                size="44" 
+                                name={dogCreator.name || 'Unknown'} 
+                                src={dogCreator.avatar||''} 
                         />
                     </Link>
+                    </div>
                     <LikeButton 
                         userId={this.props.user.id} 
                         dogId={dog.id} 
-                        inWhishlist={likedDogIds.indexOf(dog.id) > -1} 
+                        inWishlist={likedDogIds.indexOf(dog.id) > -1} 
                     />
                 </div>
             );

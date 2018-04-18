@@ -28,7 +28,7 @@ class Header extends React.Component {
         return (
             <div className="container header">
                 <div className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"> 
-                <Link to="/" className="pull-xs-left ">
+                <Link to="/home" className="pull-xs-left ">
                 <img className="logo" alt='Logo' src="/logo.png"/>
                 </Link>
                 {this.renderNavButtons()}

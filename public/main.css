@@ -8,9 +8,18 @@
 }
 
 .avatar-link {
-    top: -100px;
+    top: -71px;
     left: 5px;
+    float: left;
     position: relative;
+}
+
+.dog-picture {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
 }
 
 .dog-frame {
@@ -20,13 +29,20 @@
     border: 2px groove grey; 
     height: -webkit-fill-available;
     max-height: 250px;
-    max-width: 200px;
+    max-width: 250px;
     overflow: hidden;
 }
 
 .wishlist-btn {
-    top: -25px;
-    left: 5px;
+    top: -82px;
+    right: 3px;
     position: relative;
-    float: left;
+    float: right;
+}
+
+.dog-name {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

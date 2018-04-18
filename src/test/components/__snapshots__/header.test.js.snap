@@ -9,7 +9,7 @@ exports[`App Index Tests renders header when user is not signed in 1`] = `
   >
     <a
       className="pull-xs-left "
-      href="/"
+      href="/home"
       onClick={[Function]}
     >
       <img
@@ -50,7 +50,7 @@ exports[`App Index Tests renders header when user is signed in 1`] = `
   >
     <a
       className="pull-xs-left "
-      href="/"
+      href="/home"
       onClick={[Function]}
     >
       <img

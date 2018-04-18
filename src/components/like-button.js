@@ -8,13 +8,13 @@ class LikeButton extends React.Component {
         super(props);
         let initialState = {
             className: 'btn-primary',
-            label: 'Add to Wishlist',
+            label: 'Add',
             inWhishlist: false
         }
-        if(props.inWhishlist) {
+        if(props.inWishlist) {
            initialState = {
                 className: 'btn-success',
-                label: 'In Wishlist',
+                label: 'Added',
                 inWhishlist: true
             }
         }
@@ -33,19 +33,18 @@ class LikeButton extends React.Component {
         console.log("ACTION",action);
         switch(action.type) {
             case ADD_LIKE:
-                this.setState({label:'Adding...',className:'btn-warning'});
+                this.setState({label:'Adding',className:'btn-warning'});
                 break;
             case ADD_LIKE_SUCCESS:
-                this.setState({label:'In Wishlist',className:'btn-success', inWishlist: true});
+                this.setState({label:'Added',className:'btn-success', inWishlist: true});
                 break;
-            case ADD_LIKE_FAILURE:
-                this.setState({label:'Can\'t add! :(',className:'btn-danger'});
-                break;
+            default:
+                this.setState({label:'Can\'t add',className:'btn-danger'});
         }
     }
 
     render() {
-        let events = { 
+        const events = { 
             onClick: (!this.state.inWishlist ? this.onClick.bind(this) : ()=>{})
         };
         return (
