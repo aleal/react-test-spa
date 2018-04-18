@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
@@ -17,20 +16,16 @@ import {store} from './store';
 
 const checkAuth = () => {
     const token = localStorage.getItem('token');
-    console.log('Token: ',token);
-    let user = null;
     if (token) { 
       try {
         const { exp } = decode(token);
-        console.log(exp);
-        console.log(new Date().getTime());
         if (exp * 1000 > new Date().getTime()) {
-            console.log('Authenticated....');
             return true;
         }
       } catch (e) {
       }
     }
+    localStorage.setItem('user','{}');
     return false;
 }
   

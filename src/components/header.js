@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 
 class Header extends React.Component {
     renderNavButtons() {
-        const userName = _.get(this,'props.user.name');
+        const userName = _.get(JSON.parse(localStorage.getItem('user')),'name');
 
         if(userName) {
             return (

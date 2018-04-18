@@ -1,6 +1,5 @@
-import _ from 'lodash';
 import React from 'react';
-import {addLike, ADD_LIKE, ADD_LIKE_SUCCESS, ADD_LIKE_FAILURE} from '../actions';
+import {addLike, ADD_LIKE, ADD_LIKE_SUCCESS} from '../actions';
 
 
 class LikeButton extends React.Component {
@@ -15,7 +14,7 @@ class LikeButton extends React.Component {
            initialState = {
                 className: 'btn-success',
                 label: 'Added',
-                inWhishlist: true
+                inWishlist: true
             }
         }
         this.state = initialState;
@@ -30,7 +29,6 @@ class LikeButton extends React.Component {
     }
 
     customDispatch(action) {
-        console.log("ACTION",action);
         switch(action.type) {
             case ADD_LIKE:
                 this.setState({label:'Adding',className:'btn-warning'});

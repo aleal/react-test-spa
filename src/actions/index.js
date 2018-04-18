@@ -114,7 +114,7 @@ export function fetchDogsFailure(response) {
 export function addDogSuccess(response) {
    return {
         type: ADD_DOG_SUCCESS,
-        payload: [response.dog],
+        payload: [response],
         status: ACTION_STATUSES.SUCCESS
    };
 }

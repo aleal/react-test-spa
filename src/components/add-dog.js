@@ -1,9 +1,9 @@
 import _ from 'lodash';
 import React from 'react';
-import {reduxForm, reset} from 'redux-form';
-import {Redirect} from 'react-router-dom';
+import {reduxForm} from 'redux-form';
+import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {addDog, ACTION_STATUSES} from '../actions';
+import {addDog} from '../actions';
 import {FIELD_CONFIGS, renderForm, validateForm, imageFileToBase64} from './forms/forms-helper';
 
 const FORM_NAME = "AddDogForm";
@@ -44,7 +44,11 @@ class AddDog extends React.Component {
         };
         return (
             <div className="container">
-                <h3>Add Dog</h3>
+                <h3> Add Dog  
+                    <span className="pull-xs-right">
+                        <Link className="btn btn-primary" to="/home" > Back </Link>
+                    </span>
+                </h3>
                 {renderForm(this, FIELDS, events,'/home')}
             </div>
         );
@@ -53,7 +57,7 @@ class AddDog extends React.Component {
 }
 
 function mapStateToProps({userData:{user},dogData:{dogs, error, status}}) {
-    return {user, dog: _.get(dogs,'0'), error, status};
+    return {user, obj: _.get(dogs,'0'), error, status};
 }
 
 export default reduxForm({

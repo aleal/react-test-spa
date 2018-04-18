@@ -1,7 +1,11 @@
 .page-container {
     margin: 10px 5px;
 }
-
+.form {
+    margin: auto;
+    width: 90%;
+    max-width: 700px;
+}
 .logo {
     width: 70px;
     height: 70px;
@@ -45,4 +49,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.btn-separator {
+    margin-left: 5px;
 }

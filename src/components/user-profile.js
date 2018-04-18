@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import React from 'react';
 import {connect} from 'react-redux'
-import {Link,Redirect} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import UserAvatar from 'react-user-avatar';
 
 import {getUserProfile} from '../actions';
@@ -19,7 +19,7 @@ class UserProfile extends React.Component {
         return _.map(dogs, dog => {
             return (
                 <div className='dog-frame' key={dog.id}> 
-                     <img src={dog.picture} className='dog-picture' />
+                     <img src={dog.picture} className='dog-picture' alt={dog.name}/>
                      <p className='dog-name'>{dog.name}</p>
                 </div>
             );
@@ -31,18 +31,18 @@ class UserProfile extends React.Component {
         const avatar = _.get(this,'props.userProfile.avatar','');
         return (
             <div className="container">
-                <h2> User Profile  
+                <h3> User Profile  
                     <span className="pull-xs-right">
                         <Link className="btn btn-primary" to="/home" > Back </Link>
                     </span>
-                </h2>
+                </h3>
                 <div className='user-profile row'> 
                     <div className='col-sm-3'>
                         <UserAvatar 
-                        size="88" 
-                        name={userName} 
-                        src={avatar} 
-                    />
+                            size="88" 
+                            name={userName} 
+                            src={avatar} 
+                         />
                     </div>
                     <div className='col-sm-3'>
                         <h6>Name: {userName}</h6>
@@ -60,7 +60,6 @@ class UserProfile extends React.Component {
 }
 
 function mapStateToProps({userData:{userProfile}}) {
-    console.log(userProfile);
     return {userProfile};
 }
 

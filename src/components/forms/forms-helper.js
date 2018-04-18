@@ -120,32 +120,32 @@ export function renderForm(formObj, fields, events={}, cancelRedirectTo = '/') {
     return (
         <div className="form" >
             <form onSubmit={handleSubmit(formObj.handleSubmit.bind(formObj))} >
-               {renderFormStatusMessage(formObj.props)}
+               {renderFormStatusMessage(formObj)}
                {_.map(fields,(field) => { 
                    return renderFormField(field,_.get(events,field.name,{}));
                    })
                 }
                 <button type="submit" className="btn btn-primary" >Submit</button>
-                <Link to={cancelRedirectTo} className="btn btn-danger">Cancel</Link>
+                <Link to={cancelRedirectTo} className="btn btn-danger btn-separator">Cancel</Link>
             </form>
         </div>
     );
 }
 
-function renderFormStatusMessage(props) {
+function renderFormStatusMessage(formObj) {
     let className = '';
     let message = ''; 
-    const status = _.get(props,'status',ACTION_STATUSES.NONE);
+    const status = _.get(formObj,'props.status',ACTION_STATUSES.NONE);
     if(status === ACTION_STATUSES.LOADING) {
         className = 'has-warning';
         message = 'Loading...';
-    } else if (status === ACTION_STATUSES.SUCCESS) {
+    } else if (status === ACTION_STATUSES.SUCCESS && _.get(formObj,'props.obj')) {
         className = 'has-success';
         message = 'Success!'
     } else if (status === ACTION_STATUSES.ERROR) {
         className = 'has-danger';
-        message = _.get(props,'error.authentication.0') 
-        || _.get(props,'error','');
+        message = _.get(formObj,'props.error.authentication.0') 
+        || _.get(formObj,'props.error','');
     }
     return (
         <div className={className}>

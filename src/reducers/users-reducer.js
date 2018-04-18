@@ -24,7 +24,6 @@ export default function(state = INITIAL_STATE, action) {
     case SIGN_OUT:
         return {};
     default:
-        console.log('ACTION:',action.type);
         return state;
     }
 }

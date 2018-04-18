@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import { FETCH_DOGS, FETCH_DOGS_SUCCESS, FETCH_DOGS_FAILURE, ADD_DOG,
      ADD_DOG_SUCCESS, ADD_DOG_FAILURE, ACTION_STATUSES } from '../actions';
 
